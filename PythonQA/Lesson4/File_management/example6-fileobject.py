@@ -1,0 +1,13 @@
+with open("mynewtextfile.txt","w+") as f:
+    f.write("Otus we are learning python\nOtus we are learning python\nOtus we are learning python")
+    f.seek(0)
+    print(f.read())
+    print("Is readable:", f.readable())
+    print("Is writeable:", f.writable())
+    print("File no:", f.fileno())
+    print("Is connected to tty-like device:", f.isatty())
+    f.truncate(5)
+    f.flush()
+    f.seek(0)
+    print(f.read())
+f.close()
