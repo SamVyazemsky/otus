@@ -1,0 +1,17 @@
+ftp 192.168.122.244
+Connected to 192.168.122.244.
+220 (vsFTPd 3.0.3)
+Name (192.168.122.244:msamoylov): ftpuser
+331 Please specify the password.
+Password:
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp>
+ftp>
+ftp> ls
+200 PORT command successful. Consider using PASV.
+150 Here comes the directory listing.
+-rw-r--r--    1 0        0              12 Apr 28 15:36 FTP-TEST
+226 Directory send OK.
+ftp>

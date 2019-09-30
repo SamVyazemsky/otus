@@ -6,7 +6,8 @@ from selenium import webdriver
 def chrome_browser(request):
     options = webdriver.ChromeOptions()
     options.add_argument("start-maximized")
-    wd = webdriver.Chrome()
+    options.add_experimental_option('w3c', False)
+    wd = webdriver.Chrome(chrome_options=options)
     request.addfinalizer(wd.quit)
     return wd
 

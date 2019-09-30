@@ -7,8 +7,10 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 @pytest.fixture
 def chrome_browser(request):
     d = DesiredCapabilities.CHROME
+    opt = webdriver.ChromeOptions()
+    opt.add_experimental_option('w3c', False)
     d['loggingPrefs'] = {'performance': 'ALL'}
-    wd = webdriver.Chrome(desired_capabilities=d)
+    wd = webdriver.Chrome(desired_capabilities=d, chrome_options=opt)
     request.addfinalizer(wd.quit)
     return wd
 
@@ -20,12 +22,3 @@ def test_logging_browser(chrome_browser):
     lst = chrome_browser.get_log("performance")
     for l in lst:
         print(l)
-
-
-
-
-
-
-
-
-    time_to_load = lst[-1].get('timestamp') - lst[0].get('timestamp')

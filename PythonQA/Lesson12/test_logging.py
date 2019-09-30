@@ -18,24 +18,25 @@ def chrome_browser(request):
 class MyListener(AbstractEventListener):
 
     def before_find(self, by, value, driver):
-        logging.log()
+        # logging.log(msg="Hello, Before find!")
         print(by, value)
 
     def after_find(self, by, value, driver):
-        print(by, value, "found")
+        pass
+        #print(by, value, "found")
 
     def on_exception(self, exception, driver):
-
+        # pass
         driver.save_screenshot('screenshots/exception.png')
-        print(exception)
+        #print(exception)
 
 
 def test_logging(chrome_browser):
-    chrome_browser.get('https://habr.com/ru/111')
-    find_button = chrome_browser.find_element_by_id('search-form-btn')
+    chrome_browser.get('https://habr.com/ru/company/skyeng/blog/465291/')
+    find_button = chrome_browser.find_element_by_id('.search-form-btn12345')
     find_button.click()
     find_field = chrome_browser.find_element_by_id('search-form-field')
     find_field.send_keys('Otus')
-    logging.log('INFO', 'opened list of posts')
+    # logging.log('INFO', 'opened list of posts')
     find_field.send_keys(Keys.ENTER)
     chrome_browser.save_screenshot('screenshots/finish_test.png')
