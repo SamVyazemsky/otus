@@ -1,0 +1,32 @@
+{
+  "unregisterIfStillDownAfter": 10000,
+  "capabilities": [
+    {
+      "seleniumProtocol": "WebDriver",
+      "browserName": "firefox",
+      "maxInstances": 3,
+      "version": "",
+      "platform": "WIN10"
+    },
+    {
+      "seleniumProtocol": "WebDriver",
+      "browserName": "chrome",
+      "maxInstances": 3,
+      "version": "76",
+      "platform": "WIN10"
+    }
+  ],
+  "custom": {
+    "grid_extras_port": 3000
+  },
+  "nodeStatusCheckTimeout": 10000,
+  "hubHost": "127.0.0.1",
+  "hubPort": 4444,
+  "downPollingLimit": 0,
+  "proxy": "com.groupon.seleniumgridextras.grid.proxies.SetupTeardownProxy",
+  "port": 5555,
+  "servlets": [],
+  "maxSession": 3,
+  "registerCycle": 5000,
+  "register": true
+}
